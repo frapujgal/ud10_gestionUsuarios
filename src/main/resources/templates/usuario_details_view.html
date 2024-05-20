@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/main.css">
+	<title>Gestor de usuarios</title>
+</head>
+<body>
+	<div class="info" th:if="${mensajeInfo}">
+		<p th:text="${mensajeInfo}"></p>
+	</div>
+
+	<div>
+		<img th:src="@{/images/img.jpeg}" alt="Foto">
+		
+		<p>
+			<strong>Nombre: </strong><span th:text="${usuario.nombre}"></span>
+		</p>
+		<p>
+			<strong>Apellidos: </strong><span th:text="${usuario.apellidos}"></span>
+		</p>
+		<p>
+			<strong>DNI: </strong><span th:text="${usuario.dni}"></span>
+		</p>
+		<p>
+			<strong>Email: </strong><span th:text="${usuario.email}"></span>
+		</p>
+		<p>
+			<strong>Telefono: </strong><span th:text="${usuario.telefono}"></span>
+		</p>
+		<p>
+			<strong>Fecha de Nacimiento: </strong><span
+				th:text="${#temporals.format(usuario.fechaNacimiento, 'dd-MM-yyyy')}"></span>
+		</p>
+		<p>
+			<strong>Código Postal: </strong><span th:text="${usuario.codPostal}"></span>
+		</p>
+		<p>
+			<br><a href="/usuarios">Volver a Listado de Usuarios</a>
+		</p>
+	</div>
+	
+</body>
+</html>

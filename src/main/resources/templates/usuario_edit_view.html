@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/main.css">
+	<title>Gestor de usuarios</title>
+</head>
+<body>
+	<div class="errors" th:if="${errors}">
+		<p th:each="item: ${errors}">
+			<strong th:text="${item.key}"></strong>: <span
+				th:text="${item.value}"></span>
+		</p>
+	</div>
+
+	<div>
+		<h1>Editar usuario</h1>
+		<img th:src="@{/images/img.jpeg}" alt="Foto">
+		<form action="/usuario-edited" method="post">
+				<br><label>Nombre </label> <input name="nombre" type="text" th:value="${usuario.nombre}" required><br>
+				<label>Apellidos </label> <input name="apellidos" type="text" th:value="${usuario.apellidos}" required><br>
+				<label>DNI </label> <input name="dni" type="text" th:value="${usuario.dni}" readonly required><br>
+				<label>Email </label> <input name="email" type="text" th:value="${usuario.email}" required><br>
+				<label>Cod.Postal </label> <input name="codPostal" type="text" th:value="${usuario.codPostal}" required><br>
+				<label>Telefono </label> <input name="telefono" type="tel" th:value="${usuario.telefono}" required><br>
+				<label>Fecha nacimiento </label> <input name="fechaNacimiento" type="date" th:value="${usuario.fechaNacimiento}" required><br>
+				<label>Password </label> <input name="password" type="password" th:value="${usuario.password}" required><br>
+				<input type="submit" value="Editar">
+			</form>
+	</div>
+	<p>
+		<br><a href="/usuarios">Volver al listado de usuarios</a>
+	</p>
+	
+</body>
+</html>

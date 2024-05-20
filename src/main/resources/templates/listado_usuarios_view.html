@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/main.css">
+	<title>Gestor de usuarios</title>
+</head>
+<body>
+	<div class="info" th:if="${mensajeInfo}">
+		<p th:text="${mensajeInfo}"></p>
+	</div>
+	
+	<h1>Listado de usuarios</h1>
+	
+	<div>
+		<form action="/usuarios-find" method="get">
+			<input name="info" type="text" placeholder="Nombre/Apellidos/DNI/Email" required>
+			<input type="submit" value="Buscar">
+		</form>
+		<br>
+	</div>
+	
+	<div th:unless="${#arrays.isEmpty(usuarios)}">
+		<table border="1">
+			<tr>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>DNI</th>
+				<th>Email</th>
+				<th>Código Postal</th>
+				<th>Teléfono</th>
+				<th>Fecha de Nacimiento</th>
+				<th>Password</th>
+			</tr>
+			<tr th:each="usuario : ${usuarios}">
+				<td>
+					<img th:src="@{/images/img.jpeg}" alt="Foto" width="20px" height="20px">
+					<span th:text="${usuario.nombre}"></span>
+				</td>
+				<td th:text="${usuario.apellidos}"></td>
+				<td th:text="${usuario.dni}"></td>
+				<td th:text="${usuario.email}"></td>
+				<td th:text="${usuario.codPostal}"></td>
+				<td th:text="${usuario.telefono}"></td>
+				<td th:text="${#temporals.format(usuario.fechaNacimiento, 'dd-MM-yyyy')}"></td>
+				<td th:text="${usuario.password}"></td>
+				<td><a th:href="@{/usuario-delete(dni=${usuario.dni})}">Borrar</a></td>
+				<td><a th:href="@{/usuario-find(dni=${usuario.dni})}">Detalle</a></td>
+				<td><a th:href="@{/usuario-edit(dni=${usuario.dni})}">Editar</a></td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<br><a href="/usuario-form">Añadir usuario</a>
+	</div>
+</body>
+</html>

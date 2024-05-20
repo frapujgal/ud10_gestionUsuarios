@@ -1,0 +1,84 @@
+.errors {
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: red;
+}
+
+.info {
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: green;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Info message */
+/*.info {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}*/
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Action links */
+td a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease;
+}
+
+td a:hover {
+    background-color: #e7e7e7;
+}

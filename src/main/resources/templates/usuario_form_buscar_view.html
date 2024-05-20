@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/main.css">
+	<title>Gestor de usuarios</title>
+</head>
+<body>
+	<div class="errors" th:if="${mensajeError}">
+		<p th:text="${mensajeError}"></p>
+	</div>
+	
+	<div class="info" th:if="${mensajeInfo}">
+		<p th:text="${mensajeInfo}"></p>
+	</div>
+
+	<h1>Buscar usuario</h1>
+	<form action="/usuario-find" method="get">
+		<label>DNI </label> <input name="dni" type="text" required>
+		<input type="submit" value="Buscar">
+	</form>
+
+	<h1>Borrar usuario</h1>
+	<form action="/usuario-delete" method="get">
+		<label>DNI </label> <input name="dni" type="text" required>
+		<input type="submit" value="Borrar">
+	</form>
+	
+	<br>
+	<p>
+	<a href="/usuario-form">Añadir usuario</a><br>
+	<a href="/usuarios">Ir al listado</a>
+	
+	</p>
+	
+</body>
+</html>
