@@ -9,35 +9,29 @@
 	<div class="info" th:if="${mensajeInfo}">
 		<p th:text="${mensajeInfo}"></p>
 	</div>
-
-	<div>
-		<img th:src="@{/images/img.jpeg}" alt="Foto">
 		
-		<p>
-			<strong>Nombre: </strong><span th:text="${usuario.nombre}"></span>
+	<div class="box">
+		<h1>Detalle usuario</h1>
+		<img th:src="@{/images/img.jpeg}" alt="Foto" />
+
+		<p><strong>Nombre: </strong><span th:text="${usuario.nombre}"></span></p>
+		
+		<p><strong>Apellidos: </strong><span th:text="${usuario.apellidos}"></span></p>
+		
+		<p><strong>DNI: </strong><span th:text="${usuario.dni}"></span></p>
+		
+		<p><strong>Email: </strong><span th:text="${usuario.email}"></span></p>
+		
+		<p><strong>Telefono: </strong><span th:text="${usuario.telefono}"></span></p>
+		
+		<p><strong>Fecha de Nacimiento: </strong>
+			<span th:text="${#temporals.format(usuario.fechaNacimiento, 'dd-MM-yyyy')}"></span>
 		</p>
-		<p>
-			<strong>Apellidos: </strong><span th:text="${usuario.apellidos}"></span>
-		</p>
-		<p>
-			<strong>DNI: </strong><span th:text="${usuario.dni}"></span>
-		</p>
-		<p>
-			<strong>Email: </strong><span th:text="${usuario.email}"></span>
-		</p>
-		<p>
-			<strong>Telefono: </strong><span th:text="${usuario.telefono}"></span>
-		</p>
-		<p>
-			<strong>Fecha de Nacimiento: </strong><span
-				th:text="${#temporals.format(usuario.fechaNacimiento, 'dd-MM-yyyy')}"></span>
-		</p>
-		<p>
-			<strong>Código Postal: </strong><span th:text="${usuario.codPostal}"></span>
-		</p>
-		<p>
-			<br><a href="/usuarios">Volver a Listado de Usuarios</a>
-		</p>
+		
+		<p><strong>Código Postal: </strong><span th:text="${usuario.codPostal}"></span></p>
+		
+		<p><br><a href="/usuarios">Volver al listado de usuarios</a></p>
+		
 	</div>
 	
 </body>

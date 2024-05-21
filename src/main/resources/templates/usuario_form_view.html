@@ -13,8 +13,9 @@
 		</p>
 	</div>
 
-	<h1>Añadir nuevo usuario</h1>
-	<div>
+	
+	<div class="box">
+		<h1>Añadir usuario</h1>
 		<form action="/usuario-add" method="post">
 				<label>Nombre </label> <input name="nombre" type="text" required><br>
 				<label>Apellidos </label> <input name="apellidos" type="text" required><br>
@@ -23,13 +24,13 @@
 				<label>Cod.Postal </label> <input name="codPostal" type="text" required><br>
 				<label>Telefono </label> <input name="telefono" type="tel" required><br>
 				<label>Fecha nacimiento </label> <input name="fechaNacimiento" type="date" required><br>
-				<label>Password </label> <input name="password" type="password" required><br>
+				<label>Password </label> <input name="password" type="password" required><br><br>
 				<input type="submit" value="Añadir">
-			</form>
+			</form><br>
+			
+			<p><a href="/usuarios">Volver al listado de usuarios</a></p>
 	</div>
-	<p>
-		<a href="/usuarios">Volver al listado de usuarios</a>
-	</p>
+	
 	
 </body>
 </html>
